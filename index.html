@@ -1,0 +1,50 @@
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Código Postal</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2rem;
+            text-align: center;
+        }
+        input {
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-right: 0.5rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Valida tu Código Postal</h1>
+    <input type="text" id="cpInput" placeholder="Ej. 28001" />
+    <button onclick="verificarCP()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script src="codigos_postales.js"></script>
+    <script>
+        function verificarCP() {
+            const cp = document.getElementById("cpInput").value;
+            const resultado = document.getElementById("resultado");
+
+            if (codigosPermitidos.includes(cp)) {
+                resultado.textContent = "✅ Código válido";
+                resultado.style.color = "green";
+            } else {
+                resultado.textContent = "❌ Código no válido";
+                resultado.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
+
+agregando index.html
